@@ -171,11 +171,11 @@
         <echo>Check you have xalan and serializer jars in ${lib.dir}</echo>
     </target>
 
-    <target name="sendmail" description="aa">
-        <mail mailhost="smtp.126.com" user="pro_tes@126.com" password="iopiop123" messageMimeType="text/html" subject="jmeterTest" mailport="25" >
+    <target name="sendmail" description="sendtestreport">
+        <mail mailhost="smtp.126.com" user="pro_tes@126.com" password="******" messageMimeType="text/html" subject="ComingSoon" mailport="25" >
             <from address="pro_tes@126.com" />
-            <to address="ex-zhangchen003@pingan.com.cn" />
-            <message>This is autoPerfTest results(without apache)</message>
+            <to address="eric403225043@126.com" />
+            <message>This is autoPerfTest results we very happy to get this information. We are very glade to see you.</message>
         </mail>
     </target>
 
