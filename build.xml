@@ -121,7 +121,7 @@
     </path>
     <!--生成测试报告的任务-->
     <!--不清楚copy-images任务是做什么的，因此这里先将该任务删除（copy-images）-->
-    <target name="report" depends="xslt-report">
+    <target name="report" depends="xslt-report,copy-images">
         <echo>Report generated at ${report.datestamp}</echo>
     </target>
      <target name="xslt-report" depends="_message_xalan">
@@ -144,8 +144,8 @@
      <!-- Copy report images if needed -->
     <!--不清楚该任务，这里先将其注释掉了
     <target name="copy-images" depends="verify-images" unless="samepath">
-        <copy file="${basedir}/expand.png" tofile="${testpath}/expand.png"/>
-        <copy file="${basedir}/collapse.png" tofile="${testpath}/collapse.png"/>
+        <copy file="${basedir}/resource/1.png" tofile="${testpath}/resource/1.png"/>
+        <copy file="${basedir}/resource/2.png" tofile="${testpath}/resource/2.png"/>
     </target>
 
     <target name="verify-images">
@@ -153,7 +153,9 @@
                 <equals arg1="${testpath}" arg2="${basedir}" />
         </condition>
     </target>
+    
     -->
+       
      <!-- Check that the xalan libraries are present -->
     <condition property="xalan.present">
           <and>
