@@ -121,7 +121,7 @@
     </path>
     <!--生成测试报告的任务-->
     <!--不清楚copy-images任务是做什么的，因此这里先将该任务删除（copy-images）-->
-    <target name="report" depends="xslt-report,copy-images">
+    <target name="report" depends="xslt-report">
         <echo>Report generated at ${report.datestamp}</echo>
     </target>
      <target name="xslt-report" depends="_message_xalan">
