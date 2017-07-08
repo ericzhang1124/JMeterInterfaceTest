@@ -82,7 +82,7 @@
         classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"/>
     
     <!--项目从这里开始执行， all任务依赖 run 和 report 两个任务-->
-    <target name="all" depends="run,report"/>
+    <target name="all" depends="run,report,sendmail"/>
     <!--这是run任务-->
     <target name="run">
         <!--控制台输出-->
@@ -171,5 +171,12 @@
         <echo>Check you have xalan and serializer jars in ${lib.dir}</echo>
     </target>
 
+    <target name="sendmail" description="aa">
+        <mail mailhost="smtp.126.com" user="pro_tes@126.com" password="iopiop123" messageMimeType="text/html" subject="jmeterTest" mailport="25" >
+            <from address="pro_tes@126.com" />
+            <to address="ex-zhangchen003@pingan.com.cn" />
+            <message>This is autoPerfTest results(without apache)</message>
+        </mail>
+    </target>
 
 </project>
