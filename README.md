@@ -13,8 +13,8 @@
 jmx                         // 目录，存放jmx测试脚本
 resource                    // 目录， 存放测试需要的资源文件
 result                      // 目录， 存放测试数据和测试报告
-    report                  // 目录， 存放测试报告
-    test_data               // 目录， 存放测试结果数据，测试报告使用该数据生成测试报告
+    report                  // 目录， 存放测试报告,生成的html文件
+    test_data               // 目录， 存放测试结果数据，测试报告使用该数据生成测试报告
 con                         // 目录， 存放项目的公共配置，目前内部只有一个project.properties文件
     project.properties      // 文件， 存放公共配置，例如本项目的 github.host, user.account
 
