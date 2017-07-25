@@ -30,3 +30,14 @@ JMeter 测试报告优化
 				</xsl:for-each>
 				
 				</table>
+
+
+》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
+table tr td, table tr th {
+					font-size: 68%;
+				}
+				table.details tr th{
+				    color: #ffffff;
+					font-weight: bold;
+					background:#2674a6;
+				}
