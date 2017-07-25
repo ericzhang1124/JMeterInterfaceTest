@@ -1,0 +1,20 @@
+	<table align="center" class="details" border="0" cellpadding="5" cellspacing="2" width="95%" style="table-layout:fixed;">
+				<tr valign="top">
+					<th width="20%">Response</th>
+					<th width="30%">Failure Message</th>
+					<xsl:if test="$showData = 'y'">
+					   <th width="45%">Response Data</th>
+					</xsl:if>
+				</tr>
+			
+				<xsl:for-each select="/testResults/*[@lb = current()/@lb][attribute::s='false']">
+					<tr>
+						<td style="word-wrap:break-word;"><xsl:value-of select="@rc | @rs" /> - <xsl:value-of select="@rm" /></td>
+						<td style="word-wrap:break-word;"><xsl:value-of select="assertionResult/failureMessage" /></td>
+						<xsl:if test="$showData = 'y'">
+							<td style="word-wrap:break-word;"><xsl:value-of select="responseData" /></td>
+						</xsl:if>
+					</tr>
+				</xsl:for-each>
+				
+				</table>
