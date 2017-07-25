@@ -1,4 +1,16 @@
-	<table align="center" class="details" border="0" cellpadding="5" cellspacing="2" width="95%" style="table-layout:fixed;">
+JMeter 测试报告优化
+1. 目标：对于执行失败的测试用例，将响应数据输出到测试报告的 Detail 列表；
+2. 修改内容
+
+2.1 修改JMeter_HOME\bin\jmeter.properties文件， 确保：jmeter.save.saveservice.response_data.on_error=true；说明：该配置打开后当取样器执行失败，测试的响应数据会写入测试结果数据内，也就是那个生成的jtl文件内；
+
+2.2 修改JMeter_HOME\extras\jmeter-results-detail-report_21.xsl文件
+
+修改点1:
+<xsl:param    name="showData" select="'y'"/> <!-- 将 'n' 修改为 'y'；该开关是测试报告输出响应数据的开关 -->
+
+修改点2:
+<table align="center" class="details" border="0" cellpadding="5" cellspacing="2" width="95%" style="table-layout:fixed;">
 				<tr valign="top">
 					<th width="20%">Response</th>
 					<th width="30%">Failure Message</th>
